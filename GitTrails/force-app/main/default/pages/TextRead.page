@@ -1,0 +1,9 @@
+<apex:page renderAs="pdf" controller="TextReadClass">
+
+                                  <apex:form >
+
+                                                <apex:outputText value="{!Content}"></apex:outputText>
+
+                                  </apex:form>
+
+                                </apex:page>

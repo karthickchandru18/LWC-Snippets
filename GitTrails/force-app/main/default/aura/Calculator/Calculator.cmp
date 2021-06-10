@@ -1,0 +1,18 @@
+<aura:component controller="ScifiCalculatorapex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="num1" type="integer" />
+    <aura:attribute name="num2" type="integer" />
+    <aura:attribute name="total" type="integer" />
+    <aura:attribute name="totalsub" type="integer" />
+    
+    <lightning:input name="input1" label="Enter First Number" value="{!v.num1}" />
+    <lightning:input name="input2" label="Enter Second Number" value="{!v.num2}" /><br></br>
+    <lightning:button  variant="success" label="Add" onclick="{!c.Add}" />
+    <ui:outputNumber value= "{!v.total}"/><br></br><br></br>
+    <lightning:button  variant="success" label="Sub" onclick="{!c.Sub}" />
+    <ui:outputNumber value= "{!v.totalsub}"/><br></br>
+
+    
+    
+    
+</aura:component>

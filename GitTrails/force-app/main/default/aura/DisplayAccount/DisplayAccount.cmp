@@ -1,0 +1,23 @@
+<aura:component controller="GetAccountList" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="lstAccount" type="Account[]" />
+    <!--<lightning:button variant="success" label="Get account Details" title="Get account Details" onclick="{! c.doInit }"/>-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <div class="slds-p-around_small">
+        <div class="slds-grid slds-wrap">
+            <aura:iteration items="{!v.lstAccount}" var="account">
+                <div class="slds-col slds-size_1-of-3 slds-p-around_small" >
+                    <lightning:card footer="Account" title="{!account.Name}" iconName="standard:account">
+         
+                        <p class="slds-p-horizontal_medium">
+                            <b><h1>Name : {!account.Name}</h1></b><br></br>
+                            <h1>Id : {!account.Id}</h1><br></br>
+                            <h1>Subscriber : {!account.Subscriber__c}</h1><br></br>
+                            <h1>Country : {!account.Country__c}</h1><br></br>
+                            Potential Value : {!account.Potential_Value__c}
+                        </p>
+                    </lightning:card>
+                </div>
+            </aura:iteration>
+        </div>
+    </div>
+</aura:component>

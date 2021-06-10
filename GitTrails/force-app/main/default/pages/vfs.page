@@ -1,0 +1,59 @@
+<apex:page controller="http_sALESFORCE_Spotify" sidebar="false" showHeader="false" standardStylesheets="false" docType="html-5.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"/>
+   
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+   
+   
+   
+    <style>
+        body {
+            background-image: url("https://images.template.net/wp-content/uploads/2015/11/25190740/Ash-Color-Plain-Wallpaper-Download.jpg");
+        }
+   
+    .second {
+        background-image: url("https://c4.wallpaperflare.com/wallpaper/903/638/419/michael-jackson-late-backgrounds-desktop-wallpaper-preview.jpg");
+    }
+    </style>
+   
+    <center>
+       
+        <apex:form >
+            <div class="second">
+                <div class="container">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <br/><br/><br/><br/>
+                            <label class="control-label"><span style="color:white">Please Enter Song Name</span> <span style="color:red">*</span></label> <br/>
+                                <br/>
+                                <br/>
+                                <apex:inputText styleClass="form-control" value="{!Title}" /> <br/>
+                                 <apex:commandButton styleClass="btn btn-primary" value="Search" action="{!invoke}" />
+                                       </div>
+                                    </div>
+                                   </div>
+                                 </div>
+                                    <br/>
+                                        <br/>
+                                     <div class="container">
+                                     <table class="table">
+                                            <center>
+                                            <thead>
+                                            <tr>
+                                            <th scope="col">Name</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                           <apex:repeat value="{!SongName1}" var="b">
+                                         <tr>    
+                                     <td>{!b}</td>
+                                  </tr>
+                              </apex:repeat>
+                          </tbody>
+                      </center>
+                 </table>
+               </div>
+            </apex:form>
+         </center>
+  </apex:page>

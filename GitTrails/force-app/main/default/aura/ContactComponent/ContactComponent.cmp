@@ -1,0 +1,35 @@
+<aura:component controller="ContactList" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="contacts" type="Contact[]" />
+    <aura:attribute name="searchtext" type="string" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <lightning:card >
+        <lightning:layout  multipleRows="true" horizontalAlign="center">
+            <lightning:layoutitem size="6" padding="around-small">
+                <lightning:input name="searchvalue" value="{!v.searchtext}" variant="label-hidden" placeholder='enter a string to search' onchange="{!c.dobysearch}"/>
+            </lightning:layoutitem>
+            <lightning:layoutitem  flexibility="auto"  padding="around-small">
+                <!--<lightning:button name="searchbutton" variant="brand" label="Search" onclick="{!c.dobysearch}"/>-->
+            </lightning:layoutitem>
+        </lightning:layout>
+    </lightning:card>
+    
+    <div class="slds-p-around_small">
+        <div class="slds-grid slds-wrap">
+            <aura:iteration items="{!v.contacts}" var="contact">
+                <div class="slds-col slds-size_1-of-4 slds-p-around_small" >
+                    <lightning:card footer="contact" title="{!contact.Name}" iconName="standard:contact">
+                        <aura:set attribute="actions">
+                            <lightning:button name="{!contact.Id}" variant="brand" label="Details" onclick="{!c.call}">
+                            </lightning:button>
+                        </aura:set>
+                        <p class="slds-p-horizontal_medium">
+                            <b><h1>Name : {!contact.Name}</h1></b><br></br>
+                            <h1>Id : {!contact.Id}</h1><br></br>
+                        </p>
+                    </lightning:card>
+                </div>
+            </aura:iteration>
+        </div>
+    </div>
+    
+</aura:component>

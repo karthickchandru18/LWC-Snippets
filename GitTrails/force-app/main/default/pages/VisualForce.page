@@ -1,0 +1,16 @@
+<apex:page showHeader="false" sidebar="false"  controller="VisualforceController" renderAs="pdf">
+    <apex:form >
+        <apex:pageBlock title="Group By"  >
+            <apex:dataTable value="{!oppty}" var="a" border="2px" align="center">
+                 <apex:column value="{!a.stagename}" headerValue="Stage Name"/>
+                <apex:column value="{!a.Total}" headerValue="Total"/>
+                <apex:column value="{!a.minval}" headerValue="Minimum"/>
+                <apex:column value="{!a.maxval}" headerValue="Maximum"/>
+                <apex:column value="{!a.avg}" headerValue="Average"/>
+                
+  
+               </apex:dataTable> 
+            </apex:pageBlock>
+    </apex:form>
+        
+</apex:page>

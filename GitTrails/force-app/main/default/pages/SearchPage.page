@@ -1,0 +1,28 @@
+<apex:page controller="DynamicSOQL" sidebar="false" showHeader="false">
+    <apex:form >
+        <apex:pageBlock title="Account">
+            	<apex:pageBlockButtons location="Top"> 
+             	<apex:commandButton value="search" action="{!search}"/>
+            	</apex:pageBlockButtons>
+            <apex:pageBlockSection >
+           		<apex:pageBlockSectionItem >
+                <apex:outputLabel value="Name"/>
+                <apex:inputText value="{!name}"/>     
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Details"> 
+        <apex:pageBlockTable value="{!accounts}" var="a" columns="4" border="1px">
+            <apex:column headerValue="Account Name">
+                <apex:outputLink value="/{!a.id}" target="_blank">
+                    {!a.name}
+                </apex:outputLink>
+            </apex:column>
+            <!--<apex:column value="{!a.name}"  />-->
+            <apex:column value="{!a.Phone}"/>
+            <apex:column value="{!a.industry}"/>
+            <apex:column value="{!a.rating}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

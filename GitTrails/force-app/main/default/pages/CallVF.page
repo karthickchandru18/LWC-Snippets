@@ -1,0 +1,6 @@
+<apex:page standardController="Lead" extensions="leadConversion" action="{!updateflaginLead}">
+<script type="text/javascript">
+
+window.location.href = "https://lightningpartner-dev-ed.my.salesforce.com/p/lead/ViewConvertedLead/d?id="+"{!Lead.Id}";
+</script>
+</apex:page>

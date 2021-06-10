@@ -1,0 +1,11 @@
+<aura:component >
+    
+    <aura:attribute name="greeting" type="String" />
+    
+    <aura:registerEvent name="cmpEvent" type="c:exploreCmpEvent" />
+    
+    
+    <lightning:input label="greeting" value="{! v.greeting }" />
+    
+    <lightning:button label="Send data to Parent" onclick="{! c.handleSendData }"  />  
+</aura:component>

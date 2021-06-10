@@ -1,0 +1,8 @@
+<aura:component >
+	<aura:attribute name="greeting" type="String" />    
+    <aura:handler name="cmpEvent" event="c:exploreCmpEvent" action="{! c.handleComponentEVent }" />
+    
+    <c:exploreChildComponent />
+    
+    This is being received from parent - {! v.greeting }
+</aura:component>

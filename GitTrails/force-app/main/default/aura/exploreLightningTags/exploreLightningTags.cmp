@@ -1,0 +1,6 @@
+<aura:component>
+    <lightning:breadcrumbs>
+        <lightning:breadcrumb label="Parent Account" href="path/to/place/1"/>
+        <lightning:breadcrumb label="Case" href="path/to/place/2"/>
+    </lightning:breadcrumbs>
+</aura:component>

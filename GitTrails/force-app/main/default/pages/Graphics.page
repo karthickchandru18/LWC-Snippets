@@ -1,0 +1,15 @@
+<apex:page standardController="APEX_Invoice__c" extensions="saveandnewclass">
+<apex:form >
+        <apex:pageBlock title="Work performed">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!saveandnew}" value="Save"/>
+                 <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Work Performed" columns="2" collapsible="true" dir="LTR" id="My">
+                <apex:inputField value="{!APEX_Invoice__c.Actual_Price__c}"/>
+                <apex:inputField rendered="false" value="{!APEX_Invoice__c.APEX_Amount_Paid__c}"/>
+               
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <Lightning:card title="Example" iconName="standard:account" >
+    </Lightning:card>
+	<aura:attribute name="aval" type="integer"></aura:attribute> 
+    <aura:attribute name="bval" type="integer"></aura:attribute>
+    <aura:attribute name="Result" type="integer"></aura:attribute>
+    <div class="box">
+    <lightning:input label="Enter aval" value="{!v.aval}" required="true"/>
+    <lightning:input label="Enter bval" value="{!v.bval}" required="true"/>
+        <lightning:input label="Result" value="{!v.Result}"/>
+        <br></br>
+        <br></br>
+        <lightning:buttongroup>
+    <Lightning:button label="Addition" onclick="{!c.Addition}"/>
+    <Lightning:button label="Multiplication" onclick="{!c.Multiplication}"/>
+            </lightning:buttongroup>
+</div>
+    
+     </aura:component>

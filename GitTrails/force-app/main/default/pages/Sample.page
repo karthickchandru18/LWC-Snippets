@@ -1,0 +1,121 @@
+<apex:page cache="false"
+           standardStylesheets="false"
+           showHeader="false"
+           sidebar="false"
+           language="{!$CurrentPage.parameters.l}"
+           applyBodyTag="false"
+           applyHtmlTag="false"
+           Controller="AccountPaginationController"
+           >
+    <Style>
+       
+        .search input[type=text] {
+        padding: 10px;
+        font-size: 17px;
+        border: 1px solid grey;
+        float: left;
+        width: 40%;
+        background: #f1f1f1;
+        margin-left: 44px;
+        }
+       
+        .search input[type=submit] {
+        padding: 10px;
+        font-size: 17px;
+        color: white;
+        border: 1px solid grey;
+        float: left;
+        background: #D1052E;
+        }
+       
+       
+       
+        /*Resize the wrap to see the search bar change!*/
+        .wrap{
+        padding : 30px;
+       
+        }
+        .knowledgeBody
+        {
+        padding : 50px;
+        }
+        .header{
+        border: 7px solid white;
+        padding: 30px;
+        }
+        .makeItCenter{
+        padding-left:100px;
+        padding-right:100px;
+        }
+
+    </Style>
+    <apex:pageBlock >
+     
+    <apex:form >
+        <div class="makeItCenter">
+           
+           
+            <div id="header" class ="header">
+                <span style="margin-left: 5px;">
+                    <!--<apex:outputLink value="http://www.fujifilm.com.au">
+                        <apex:image value="{!$Resource.pkb_logo_new}" />
+                         <apex:param name="{!pkbCon.languageParam}" value="{!pkbcon.selectedLanguage}" />
+                    </apex:outputLink> -->
+                </span>
+            </div>
+           
+            <div>
+               
+                <div class="search"  >
+                    <apex:inputText value="{!searchKey}" html-placeholder="Search..."/>
+                    <apex:commandButton value="Search"  action="{!searchFunction}"   />
+                </div>
+               
+                <div class="reset" >
+                    <a></a>
+                </div>
+               
+               
+                <div class="knowledgeBody">
+                    <div>
+                        <h3><b><b></b>
+                            Popular Articles
+                            </b>
+                        </h3>
+                    </div>
+                    <hr/>
+                    <div>
+                        <apex:pageBlockSection title="Results - Page {!pageNumber}" columns="1" >
+                            
+                            <apex:pageBlockSection >
+                        <apex:dataList var="k" value="{!AccountList}">
+                            <a href="{!'/apex/SampleVFPage?nav='+k.Id}" style="text-decoration: none;font-family:Calibri (Body);font-size:17px"><b style="color:#39568e;">{!k.Name}</b></a><br/>
+                           
+                            <b style="font-size:15px;text-decoration: none;font-family:Calibri (Body);color:grey">MSDS - <apex:outputText value="{0,date,dd' 'MMMMM' 'yyyy}">
+                                <apex:param value="{!k.Createddate}" />
+                                </apex:outputText></b><br/>
+                            <span style="font-size:16px;text-decoration: none;">{!k.Phone}</span><br/><br/><br/>
+                        </apex:dataList>
+                        </apex:pageBlockSection>
+            		
+ 		<apex:panelGrid columns="4" >
+	<!--	<apex:commandLink action="{!first}">First</apex:commandLink>
+        <apex:commandLink action="{!previous}" rendered="{!hasPrevious}">Previous</apex:commandLink>
+		<apex:commandLink action="{!next}" rendered="{!hasNext}">Next</apex:commandLink>
+		<apex:commandLink action="{!last}">Last</apex:commandLink>-->
+            
+        
+            <apex:commandButton action="{!first}" value="First" styleClass="buttonStyle" style="background:LightBlue;width:80px;"/>
+			<apex:commandButton action="{!previous}" rendered="{!hasPrevious}" value="Previous" styleClass="buttonStyle" style="background:LightBlue;width:80px;"/>
+			<apex:commandButton action="{!next}" rendered="{!hasNext}" value="Next" styleClass="buttonStyle" style="background:LightBlue;width:80px;"/>
+      		<apex:commandButton action="{!last}" value="Last" styleClass="buttonStyle" style="background:LightBlue;width:80px;"/>
+                  
+      </apex:panelGrid>
+       </apex:pageBlockSection>
+    </div>
+    </div>
+    </div>
+    </div>
+	</apex:form>
+</apex:pageBlock>
+</apex:page>

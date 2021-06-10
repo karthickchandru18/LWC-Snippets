@@ -1,0 +1,21 @@
+<aura:component >
+<!--<aura:attribute name="str" type="string" default="Hello World!"/>
+<ui:outputText value="Enter a string value : "/><ui:inputText value="{!v.str}"/>
+<br/><br/>
+<ui:outputText value="{#v.str}"/>
+<br/><br/>
+<ui:outputText value="{!v.str}"/>-->
+    <lightning:card> 
+<lightning:layout multipleRows="true" horizontalAlign="center">
+            <lightning:layoutItem padding="around-small">
+                <lightning:input
+                    name="progress"
+                  
+                /></lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <lightning:button label="Start New Game" variant="Brand" title="Start New Game"  />
+            </lightning:layoutItem>
+            
+        </lightning:layout>
+    </lightning:card> 
+</aura:component>
